@@ -1,0 +1,895 @@
+/* Common */
+
+/* Helpers */
+.dao-theme {
+  .border-box {
+    box-sizing: border-box;
+  }
+  .center.abs {
+    position: absolute;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  .card {
+    margin: 0.3em 0.6em .6em 0.6em;
+    padding: 0.6em;
+    background: #ffffff;
+    box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.25);
+  }
+  .card.card-item {
+    margin-right: 0em;
+  }
+  .no-mar {
+    margin: 0;
+  }
+  .no-pad {
+    padding: 0;
+  }
+  .pad-1 {
+    padding: 10px;
+  }
+  .side-pad-1 {
+    padding: 0 10px;
+  }
+  .mar-1 {
+    margin: 10px;
+  }
+  .mar-bot-1 {
+    margin-bottom: 10px;
+  }
+  .mar-bot-2 {
+    margin-bottom: 30px;
+  }
+  .pad-top-1 {
+    padding-top: 10px;
+  }
+  .pad-right-1 {
+    padding-right: 10px;
+  }
+  .bg-1 {
+    background: #ffffff;
+  }
+  .text-shad {
+    text-shadow: 1px 1px 3px #00000030;
+  }
+  .full-shad {
+    box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.25);
+  }
+  .top-shad {
+    box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, 0.16), 2px 0 10px 0 rgba(0, 0, 0, 0.12);
+  }
+  .bot-shad {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 2px 0 10px 0 rgba(0, 0, 0, 0.12);
+  }
+  .right-shad {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  }
+  .left-shad {
+    box-shadow: 2px 0 5px 0 rgba(0, 0, 0, 0.16), 2px 0 10px 0 rgba(0, 0, 0, 0.12);
+  }
+  .bottom-inset-shad {
+    position: absolute;
+    bottom: 0; left: -10px; right: -10px;
+    height: 25px;
+    box-shadow: inset 0 -5px 5px -4px rgba(0, 0, 0, 0.212);
+    pointer-events: none;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .full-width {
+    width: 100%;
+  }
+  .full-height {
+    height: 100%;
+  }
+  .fill-to-edge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .hide-overflow {
+    overflow: hidden;
+  }
+  .let-overflow {
+    overflow: auto;
+  }
+  .let-overflow-y {
+    transform: translateZ(0px);
+    -webkit-transform: translateZ(0px);
+    -webkit-overflow-scrolling: touch !important;
+    overflow: auto !important;
+  }
+  .full-max-width {
+    max-width: 100%;
+  }
+  .flex-container {
+    position: relative;
+    width: none;
+    height: none;
+  }
+  .f-rel {
+    position: relative;
+  }
+  .f-rel.center-center {
+    * {
+      margin-left: 50%;
+      margin-top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .pointable {
+    cursor: pointer;
+  }
+  // Flexbox
+  .inline-flex {
+    display: inline-flex;
+  }
+  .f-row,
+  .f-col {
+    display: flex;
+    flex: 1 1 auto;
+  }
+  .f-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .f-col {
+    flex-direction: column;
+  }
+  .flex {
+    flex: 1;
+    flex-basis: 0.000000001px;
+  }
+  .auto-flex {
+    flex: 1 1 auto;
+  }
+  .flex-fit {
+    flex: 1 0 0%;
+  }
+  .f-row.no-flex,
+  .f-col.no-flex {
+    flex: none;
+  }
+  .f-row.no-wrap,
+  .f-col.no-wrap {
+    flex-wrap: nowrap;
+    text-overflow: ellipsis;
+  }
+  .no-text-wrap {
+    white-space: nowrap;
+  }
+  .wrap-word {
+    overflow-wrap: break-word;
+    word-break: break-all;
+  }
+  /**
+    * Ratios
+    */
+  .f-row.f-ratio-1,
+  .f-col.f-ratio-1 {
+    flex-grow: 1;
+  }
+
+  /**
+    * Cross Axis Alignement
+    */
+  .f-row.top,
+  .f-col.left {
+    align-items: flex-start;
+  }
+  .f-row.middle,
+  .f-col.center,
+  .f-row.center-center,
+  .f-col.center-center {
+    align-items: center;
+  }
+  .f-row.bottom,
+  .f-col.right {
+    align-items: flex-end;
+  }
+  .f-row.baseline,
+  .f-col.baseline {
+    align-items: baseline;
+  }
+  /**
+    * Alignment in main axis.
+    */
+  .f-row.left,
+  .f-col.top {
+    justify-content: flex-start;
+  }
+  .f-row.center,
+  .f-col.middle,
+  .f-row.center-center,
+  .f-col.center-center {
+    justify-content: center;
+  }
+  .f-row.right,
+  .f-col.bottom {
+    justify-content: flex-end;
+  }
+  .f-row.space-around,
+  .f-col.space-around {
+    justify-content: space-around;
+  }
+  .f-row.space-between,
+  .f-col.space-between {
+    justify-content: space-between;
+  }
+  /**
+    * Self alignment.
+    */
+  .f-row,
+  .f-col {
+    .stretch {
+      align-self: stretch;
+    }
+    .baseline {
+      align-self: baseline;
+    }
+  }
+  .f-row {
+    >.top {
+      align-self: flex-start;
+    }
+    >.center {
+      align-self: center;
+    }
+    >.bottom {
+      align-self: flex-end;
+    }
+  }
+  .f-col {
+    >.left {
+      align-self: flex-start;
+    }
+    >.center {
+      align-self: center;
+    }
+    >.right {
+      align-self: flex-end;
+    }
+  }
+  /**
+    * multi-line alignment in main axis.
+    */
+  .f-row.all-top,
+  .f-col.all-left {
+    align-content: flex-start;
+  }
+
+  .f-row.all-bottom,
+  .f-col.all-right {
+    align-content: flex-end;
+  }
+
+  .f-row.all-middle,
+  .f-col.all-center {
+    align-content: center;
+  }
+
+  .f-row.all-space-between {
+    align-content: space-between;
+  }
+
+  .f-row.all-space-around {
+    align-content: space-around;
+  }
+  /*
+    *Animation
+    */
+  .f-row.smooth {
+    * {
+      transition: flex-basis 1.5s ease-out;
+    }
+  }
+  .smooth-self {
+    transition: flex-basis 5.5s ease-out;
+  }
+
+  /* Responsive Classes */
+  $col1: 8.333%;
+  $col2: 16.667%;
+  $col3: 25%;
+  $col4: 33.333%;
+  $col5: 41.667%;
+  $col6: 50%;
+  $col7: 58.333%;
+  $col8: 66.667%;
+  $col9: 75%;
+  $col10: 83.333%;
+  $col11: 91.667%;
+  $col12: 100%;
+
+  /* @include bp(sm) */
+  @mixin bp($point) {
+    @if $point == only-xs {
+      @media only screen and (max-width: 48em) {
+        @content;
+      }
+    }
+    @if $point == sm {
+      @media only screen and (min-width: 48em) {
+        @content;
+      }
+    }
+    @if $point == md {
+      @media only screen and (min-width: 62em) {
+        @content;
+      }
+    }
+    @if $point == lg {
+      @media only screen and (min-width: 75em) {
+        @content;
+      }
+    }
+  }
+  @mixin col($col) {
+    flex: 1;
+    @if $col == 1 {
+      flex-basis: $col1;
+      max-width: $col1;
+    }
+    @if $col == 2 {
+      flex-basis: $col2;
+      max-width: $col2;
+    }
+    @if $col == 3 {
+      flex-basis: $col3;
+      max-width: $col3;
+    }
+    @if $col == 4 {
+      flex-basis: $col4;
+      max-width: $col4;
+    }
+    @if $col == 5 {
+      flex-basis: $col5;
+      max-width: $col5;
+    }
+    @if $col == 6 {
+      flex-basis: $col6;
+      max-width: $col6;
+    }
+    @if $col == 7 {
+      flex-basis: $col7;
+      max-width: $col7;
+    }
+    @if $col == 8 {
+      flex-basis: $col8;
+      max-width: $col8;
+    }
+    @if $col == 9 {
+      flex-basis: $col9;
+      max-width: $col9;
+    }
+    @if $col == 10 {
+      flex-basis: $col10;
+      max-width: $col10;
+    }
+    @if $col == 11 {
+      flex-basis: $col11;
+      max-width: $col11;
+    }
+    @if $col == 12 {
+      flex-basis: $col12;
+      max-width: $col12;
+    }
+  }
+  @mixin offset($side, $col) {
+    @if $side == left {
+      margin-left: $col;
+    }
+    @if $side == right {
+      margin-right: $col;
+    }
+  }
+
+  // Helpers
+  @include bp(only-xs) {
+    .hide-on-xs {
+      display: none;
+    }
+  }
+  @include bp(sm) {
+    .hide-on-sm-plus {
+      display: none;
+    }
+  }
+  @include bp(md) {
+    .hide-on-md-plus {
+      display: none;
+    }
+  }
+
+  .show-on-md-plus { display: none; }
+  @include bp(md) {
+    .show-on-md-plus { display: block; }
+  }
+  .show-on-lg-plus { display: none; }
+  @include bp(lg) {
+    .show-on-lg-plus { display: block; }
+  }
+  /*
+    *Extra Small - DEFAULT
+    */
+  .f-row,
+  .f-col {
+    .xs1 {
+      @include col(1);
+    }
+    .xs2 {
+      @include col(2);
+    }
+    .xs3 {
+      @include col(3);
+    }
+    .xs4 {
+      @include col(4);
+    }
+    .xs5 {
+      @include col(5);
+    }
+    .xs6 {
+      @include col(6);
+    }
+    .xs7 {
+      @include col(7);
+    }
+    .xs8 {
+      @include col(8);
+    }
+    .xs9 {
+      @include col(9);
+    }
+    .xs10 {
+      @include col(10);
+    }
+    .xs11 {
+      @include col(11);
+    }
+    .xs12 {
+      @include col(12);
+    }
+  }
+  /*
+    *SMALL
+    */
+  @include bp(sm) {
+    .f-row,
+    .f-col {
+      .sm1 {
+        @include col(1);
+      }
+      .sm2 {
+        @include col(2);
+      }
+      .sm3 {
+        @include col(3);
+      }
+      .sm4 {
+        @include col(4);
+      }
+      .sm5 {
+        @include col(5);
+      }
+      .sm6 {
+        @include col(6);
+      }
+      .sm7 {
+        @include col(7);
+      }
+      .sm8 {
+        @include col(8);
+      }
+      .sm9 {
+        @include col(9);
+      }
+      .sm10 {
+        @include col(10);
+      }
+      .sm11 {
+        @include col(11);
+      }
+      .sm12 {
+        @include col(12);
+      }
+    }
+  }
+  /*
+    *MEDIUM
+    */
+  @include bp(md) {
+    .f-row,
+    .f-col {
+      .md1 {
+        @include col(1);
+      }
+      .md2 {
+        @include col(2);
+      }
+      .md3 {
+        @include col(3);
+      }
+      .md4 {
+        @include col(4);
+      }
+      .md5 {
+        @include col(5);
+      }
+      .md6 {
+        @include col(6);
+      }
+      .md7 {
+        @include col(7);
+      }
+      .md8 {
+        @include col(8);
+      }
+      .md9 {
+        @include col(9);
+      }
+      .md10 {
+        @include col(10);
+      }
+      .md11 {
+        @include col(11);
+      }
+      .md12 {
+        @include col(12);
+      }
+    }
+  }
+  /*
+    *LARGE
+    */
+  @include bp(lg) {
+    .f-row,
+    .f-col {
+      .lg1 {
+        @include col(1);
+      }
+      .lg2 {
+        @include col(2);
+      }
+      .lg3 {
+        @include col(3);
+      }
+      .lg4 {
+        @include col(4);
+      }
+      .lg5 {
+        @include col(5);
+      }
+      .lg6 {
+        @include col(6);
+      }
+      .lg7 {
+        @include col(7);
+      }
+      .lg8 {
+        @include col(8);
+      }
+      .lg9 {
+        @include col(9);
+      }
+      .lg10 {
+        @include col(10);
+      }
+      .lg11 {
+        @include col(11);
+      }
+      .lg12 {
+        @include col(12);
+      }
+    }
+  }
+  /*
+    *OFFSETS
+    */
+  //LEFT DEFAULT
+  .offset-left-1,
+  .xs-offset-left-1 {
+    @include offset(left, $col1);
+  }
+  .offset-left-2,
+  .xs-offset-left-2 {
+    @include offset(left, $col2);
+  }
+  .offset-left-3,
+  .xs-offset-left-3 {
+    @include offset(left, $col3);
+  }
+  .offset-left-4,
+  .xs-offset-left-4 {
+    @include offset(left, $col4);
+  }
+  .offset-left-5,
+  .xs-offset-left-5 {
+    @include offset(left, $col5);
+  }
+  .offset-left-6,
+  .xs-offset-left-6 {
+    @include offset(left, $col6);
+  }
+  .offset-left-7,
+  .xs-offset-left-7 {
+    @include offset(left, $col7);
+  }
+  .offset-left-8,
+  .xs-offset-left-8 {
+    @include offset(left, $col8);
+  }
+  .offset-left-9,
+  .xs-offset-left-9 {
+    @include offset(left, $col9);
+  }
+  .offset-left-10,
+  .xs-offset-left-10 {
+    @include offset(left, $col10);
+  }
+  .offset-left-11,
+  .xs-offset-left-11 {
+    @include offset(left, $col11);
+  }
+  //RIGHT DEFAULT
+  .offset-right-1,
+  .xs-offset-right-1 {
+    @include offset(right, $col1);
+  }
+  .offset-right-2,
+  .xs-offset-right-2 {
+    @include offset(right, $col2);
+  }
+  .offset-right-3,
+  .xs-offset-right-3 {
+    @include offset(right, $col3);
+  }
+  .offset-right-4,
+  .xs-offset-right-4 {
+    @include offset(right, $col4);
+  }
+  .offset-right-5,
+  .xs-offset-right-5 {
+    @include offset(right, $col5);
+  }
+  .offset-right-6,
+  .xs-offset-right-6 {
+    @include offset(right, $col6);
+  }
+  .offset-right-7,
+  .xs-offset-right-7 {
+    @include offset(right, $col7);
+  }
+  .offset-right-8,
+  .xs-offset-right-8 {
+    @include offset(right, $col8);
+  }
+  .offset-right-9,
+  .xs-offset-right-9 {
+    @include offset(right, $col9);
+  }
+  .offset-right-10,
+  .xs-offset-right-10 {
+    @include offset(right, $col10);
+  }
+  .offset-right-11,
+  .xs-offset-right-11 {
+    @include offset(right, $col11);
+  }
+  //Responsive Small Offsets
+  @include bp(sm) {
+    //LEFT
+    .sm-offset-left-1 {
+      @include offset(left, $col1);
+    }
+    .sm-offset-left-2 {
+      @include offset(left, $col2);
+    }
+    .sm-offset-left-3 {
+      @include offset(left, $col3);
+    }
+    .sm-offset-left-4 {
+      @include offset(left, $col4);
+    }
+    .sm-offset-left-5 {
+      @include offset(left, $col5);
+    }
+    .sm-offset-left-6 {
+      @include offset(left, $col6);
+    }
+    .sm-offset-left-7 {
+      @include offset(left, $col7);
+    }
+    .sm-offset-left-8 {
+      @include offset(left, $col8);
+    }
+    .sm-offset-left-9 {
+      @include offset(left, $col9);
+    }
+    .sm-offset-left-10 {
+      @include offset(left, $col10);
+    }
+    .sm-offset-left-11 {
+      @include offset(left, $col11);
+    }
+    //RIGHT
+    .sm-offset-right-1 {
+      @include offset(right, $col1);
+    }
+    .sm-offset-right-2 {
+      @include offset(right, $col2);
+    }
+    .sm-offset-right-3 {
+      @include offset(right, $col3);
+    }
+    .sm-offset-right-4 {
+      @include offset(right, $col4);
+    }
+    .sm-offset-right-5 {
+      @include offset(right, $col5);
+    }
+    .sm-offset-right-6 {
+      @include offset(right, $col6);
+    }
+    .sm-offset-right-7 {
+      @include offset(right, $col7);
+    }
+    .sm-offset-right-8 {
+      @include offset(right, $col8);
+    }
+    .sm-offset-right-9 {
+      @include offset(right, $col9);
+    }
+    .sm-offset-right-10 {
+      @include offset(right, $col10);
+    }
+    .sm-offset-right-11 {
+      @include offset(right, $col11);
+    }
+  }
+  //Responsive Medium Offsets
+  @include bp(md) {
+    //LEFT
+    .md-offset-left-1 {
+      @include offset(left, $col1);
+    }
+    .md-offset-left-2 {
+      @include offset(left, $col2);
+    }
+    .md-offset-left-3 {
+      @include offset(left, $col3);
+    }
+    .md-offset-left-4 {
+      @include offset(left, $col4);
+    }
+    .md-offset-left-5 {
+      @include offset(left, $col5);
+    }
+    .md-offset-left-6 {
+      @include offset(left, $col6);
+    }
+    .md-offset-left-7 {
+      @include offset(left, $col7);
+    }
+    .md-offset-left-8 {
+      @include offset(left, $col8);
+    }
+    .md-offset-left-9 {
+      @include offset(left, $col9);
+    }
+    .md-offset-left-10 {
+      @include offset(left, $col10);
+    }
+    .md-offset-left-11 {
+      @include offset(left, $col11);
+    }
+    //RIGHT
+    .md-offset-right-1 {
+      @include offset(right, $col1);
+    }
+    .md-offset-right-2 {
+      @include offset(right, $col2);
+    }
+    .md-offset-right-3 {
+      @include offset(right, $col3);
+    }
+    .md-offset-right-4 {
+      @include offset(right, $col4);
+    }
+    .md-offset-right-5 {
+      @include offset(right, $col5);
+    }
+    .md-offset-right-6 {
+      @include offset(right, $col6);
+    }
+    .md-offset-right-7 {
+      @include offset(right, $col7);
+    }
+    .md-offset-right-8 {
+      @include offset(right, $col8);
+    }
+    .md-offset-right-9 {
+      @include offset(right, $col9);
+    }
+    .md-offset-right-10 {
+      @include offset(right, $col10);
+    }
+    .md-offset-right-11 {
+      @include offset(right, $col11);
+    }
+  }
+  //Responsive Large Offsets
+  @include bp(lg) {
+    //LEFT
+    .lg-offset-left-1 {
+      @include offset(left, $col1);
+    }
+    .lg-offset-left-2 {
+      @include offset(left, $col2);
+    }
+    .lg-offset-left-3 {
+      @include offset(left, $col3);
+    }
+    .lg-offset-left-4 {
+      @include offset(left, $col4);
+    }
+    .lg-offset-left-5 {
+      @include offset(left, $col5);
+    }
+    .lg-offset-left-6 {
+      @include offset(left, $col6);
+    }
+    .lg-offset-left-7 {
+      @include offset(left, $col7);
+    }
+    .lg-offset-left-8 {
+      @include offset(left, $col8);
+    }
+    .lg-offset-left-9 {
+      @include offset(left, $col9);
+    }
+    .lg-offset-left-10 {
+      @include offset(left, $col10);
+    }
+    .lg-offset-left-11 {
+      @include offset(left, $col11);
+    }
+    //RIGHT
+    .lg-offset-right-1 {
+      @include offset(right, $col1);
+    }
+    .lg-offset-right-2 {
+      @include offset(right, $col2);
+    }
+    .lg-offset-right-3 {
+      @include offset(right, $col3);
+    }
+    .lg-offset-right-4 {
+      @include offset(right, $col4);
+    }
+    .lg-offset-right-5 {
+      @include offset(right, $col5);
+    }
+    .lg-offset-right-6 {
+      @include offset(right, $col6);
+    }
+    .lg-offset-right-7 {
+      @include offset(right, $col7);
+    }
+    .lg-offset-right-8 {
+      @include offset(right, $col8);
+    }
+    .lg-offset-right-9 {
+      @include offset(right, $col9);
+    }
+    .lg-offset-right-10 {
+      @include offset(right, $col10);
+    }
+    .lg-offset-right-11 {
+      @include offset(right, $col11);
+    }
+  }
+}
